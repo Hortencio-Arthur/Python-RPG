@@ -64,14 +64,15 @@ def nivel_sucesso(soma, animal):
 
     return resultado
 
-
-
-soma_roll, dado1, dado2 = rolar_dados()
-poder_final = definir_poder()
-animal_final = tem_animal()
-soma_final = soma_roll + poder_final
-
-print(f'Poder = {poder_final}')
-print(f'Dados: [{dado1}] + [{dado2}] = {soma_roll}')
-print(f'Total: {soma_roll} + {poder_final} = {soma_final}')
-print(f'Resulto: {nivel_sucesso(soma_final, animal_final)}')
+while True:
+    soma_roll, dado1, dado2 = rolar_dados()
+    poder_final = definir_poder()
+    if poder_final >= 999:
+        break
+    animal_final = tem_animal()
+    soma_final = soma_roll + poder_final
+    print(f'Poder = {poder_final}')
+    print(f'Dados: [{dado1}] + [{dado2}] = {soma_roll}')
+    print(f'Total: {soma_roll} + {poder_final} = {soma_final}')
+    print(f'Resulto: {nivel_sucesso(soma_final, animal_final)}')
+    print('=' * 40)
